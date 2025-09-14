@@ -1,0 +1,37 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Card from "../components/Card.astro";
+---
+
+<PageLayout title="Fjerde Eksempel">
+  <header>
+    <h1>Fjerde eksempel</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nemo aut porro quisquam sint sequi nam, corrupti deserunt quos, est omnis consequuntur voluptate eum. Eligendi pariatur inventore eius consequatur rem.</p>
+  </header>
+  <section>
+    <h2>Ny overskrift</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui et debitis sit illum consequatur, corrupti minus officia atque tempore, eveniet fugiat id nesciunt iusto, labore commodi magnam itaque inventore praesentium.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore commodi mollitia modi reprehenderit dolor autem distinctio, placeat architecto veniam non, itaque pariatur aut nemo? Totam harum corrupti aspernatur. Inventore, aperiam.</p>
+  </section>
+
+  <section>
+    <h2>Kort sektion</h2>
+    <div class="grid_1_1f_1_2fr">
+      <div class="flex_one_column">
+        <Card img="/imgs/graffiti01.webp" tag="Local CRTV" text="Lorem ipsum, dolor sit amet consectetur" link="/content/localcrtv" />
+        <Card img="/imgs/graffiti02.webp" tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
+        <Card img="/imgs/graffiti03.webp" tag="Hidden Free Gem" text="Qui et debitis sit illum consequatur" />
+      </div>
+      <Card variant="featured" img="/imgs/graffiti02.webp" tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
+    </div>
+  </section>
+
+  <section>
+    <h2>Kort sektion</h2>
+    <div class="grid_3_1f">
+      <Card img="/imgs/graffiti01.webp" tag="Local CRTV" text="Lorem ipsum, dolor sit amet consectetur" />
+      <Card img="/imgs/graffiti02.webp" tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
+      <Card img="/imgs/graffiti03.webp" tag="Hidden Free Gem" text="Qui et debitis sit illum consequatur" />
+    </div>
+  </section>
+</PageLayout>

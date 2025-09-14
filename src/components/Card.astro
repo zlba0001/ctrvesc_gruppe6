@@ -1,0 +1,44 @@
+---
+const { variant, img, tag, text, link } = Astro.props;
+---
+
+<article class={variant}>
+  <img src={img} />
+  <p class="tag"><a href={link}>{tag}</a></p>
+  <p>{text}</p>
+</article>
+
+<style>
+  img {
+    min-width: 100%;
+  }
+
+  p {
+    display: inline;
+    line-height: 1.25rem;
+  }
+  .tag {
+    text-decoration: underline;
+    font-size: smaller;
+    text-transform: uppercase;
+  }
+  .featured {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .featured img {
+    margin-bottom: 0.5rem;
+  }
+
+  .featured p {
+    display: block;
+    line-height: 2rem;
+    font-size: xx-large;
+  }
+  .featured .tag {
+    text-decoration: underline;
+    font-size: smaller;
+  }
+</style>
+<script></script>
