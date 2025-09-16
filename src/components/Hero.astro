@@ -1,0 +1,93 @@
+---
+import Column from "../components/Column.astro";
+import HeroBillede from "../img/herobillede.svg";
+import FirstCol from "../img/forsidebillede1.svg";
+import SecondCol from "../img/forsidebillede2.svg";
+import ThirdCol from "../img/forsidebillede3.svg";
+import Image from "astro/components/Image.astro";
+---
+
+<section>
+  <div class="bg-img">
+    <div class="hero-tekst">
+      <h2>A welcoming guide to Copenhagens creative world.</h2>
+      <h3>For newcomers, dreamers, and experienced creators alike.</h3>
+    </div>
+    <div class="hero-img">
+      <Image src={HeroBillede} alt="bla bal" />
+    </div>
+  </div>
+  <div class="grid-cols">
+    <Column img={FirstCol} articleTag="Local cv" content="This is one column." />
+    <Column img={SecondCol} content="here wa want other text" />
+    <Column img={ThirdCol} content="This is another." />
+  </div>
+</section>
+
+<style>
+  h2,
+  h3 {
+    text-align: center;
+  }
+  .bg-img {
+    position: relative;
+  }
+  .hero-img img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero-tekst {
+    position: absolute;
+    inset: 50% auto auto 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #d9fa51;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    padding: 0.5rem 1rem;
+    max-width: 90ch;
+  }
+
+  /* Mobil: 1 kolonne som default */
+  .grid-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero-img {
+      width: 100%;
+      height: auto;
+    }
+    .grid_3_1f {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .grid_1_1f_1_2fr {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+
+    .hero-tekst {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #d9fa51;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .grid-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+  }
+</style>

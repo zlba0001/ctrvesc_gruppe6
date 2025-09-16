@@ -1,0 +1,20 @@
+---
+import Card from "./Card.astro"
+import latest-billede1 from "../img/creativeespacebillede.svg"
+import Image from "astro/components/Image.astro";
+
+
+const { variant, img, tag, text, link } = Astro.props;
+---
+
+<section>
+    <h2>Kort sektion</h2>
+    <div class="grid_1_1f_1_2fr">
+      <div class="flex_one_column">
+        <Card img="/img/graffiti01.webp" tag="Local CRTV" text="Hos AOF.dk finder du inspirerende kreative kurser for nybegyndere i København." link="/content/localcrtv" />
+        <Card img="/img/graffiti02.webp" tag="Global CRTV" text="Fejr Kreativolis 1-årsdag med hygge, konkurrencer og goodiebags!" />
+        <Card img="/img/graffiti03.webp" tag="Hidden Free Gem" text="Vilde Overvik Helmersen, studerende ved Mode og Designskolen: «At vise mine designs på Fashion Week var både nervepirrende og utrolig stort.»" />
+      </div>
+      <Card variant="latest-billede1" img="/img/creativeescapebillede.svg" tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
+    </div>
+  </section>

@@ -1,0 +1,47 @@
+---
+import Column from "./Column.astro";
+import Billede from "../img/rød1_articlebillede1.svg";
+import Billede2 from "../img/rød1_articlebillede2.svg";
+import Billede3 from "../img/rød1_articlebillede3.svg";
+
+const { variant, img, tag, text, link } = Astro.props;
+---
+
+<section class="article-tekst">
+  <h2>Featured Articles</h2>
+  <h3>Unmissable Creative Hotspots</h3>
+  <div class="article-img">
+    <Column img={Billede} content="Alis Wonderland - Skatepark and Creative Hub - More than just a skatepark - Wonderland is a vibrant playground bursting with colors, street art and the raw energy of Copenhagens creative scene " />
+    <Column img={Billede2} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
+    <Column img={Billede3} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
+  </div>
+</section>
+
+<style>
+  .article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1.5rem;
+  }
+
+  .article-img{
+    
+  }
+
+  @media (min-width: 768px) {
+
+    .article-grid { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    }
+
+    .article-img{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+  }
+</style>
