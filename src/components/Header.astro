@@ -1,0 +1,79 @@
+---
+
+---
+
+<header>
+  <div class="header-container">
+    <!-- Logo venstre -->
+    <img src="/img/logo.svg" alt="logo" class="logo" />
+
+    <!-- Burger-knapp høyre -->
+    <button id="burger" class="burger">&#9776;</button>
+
+    <!-- Meny -->
+    <nav id="nav-menu" class="nav-menu">
+      <a href="/">Hjem</a>
+      <a href="⁦https://www.instagram.com/oasis.cph?igsh=MXcxM2dhMDNlaW53cA%3D%3D⁩" target="_blank" rel="noopener noreferrer">About us</a>
+      <a href="/contact">Kontakt</a>
+      <a href="/courses">Kurs</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    height: 50px;
+  }
+
+  .nav-menu {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .nav-menu a:hover {
+    color: #e1306c;
+  }
+
+  .burger {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #fff;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    .nav-menu.active {
+      display: flex;
+    }
+
+    .burger {
+      display: block;
+    }
+  }
+</style>

@@ -1,21 +1,123 @@
 ---
-import Card from "./Card.astro";
+// Imports
+import creativeEscape from "../img/creativeescapebillede.svg";
 import latestbillede1 from "../img/latest_update_billede1.svg";
 import latestbillede2 from "../img/latest_update_billede2.svg";
 import latestbillede3 from "../img/latest_update_billede3.svg";
-import creativeEscape from "../img/creativeescapebillede.svg";
-
-const { variant, img, tag, text, link } = Astro.props;
 ---
 
-<section>
-  <h2>BOOM</h2>
-  <div class="grid_1_1f_1_2fr">
-    <div class="flex_one_column">
-      <Card img={latestbillede1} tag="Local CRTV" text="Hos AOF.dk finder du inspirerende kreative kurser for nybegyndere i København." link="/content/localcrtv" />
-      <Card img={latestbillede2} tag="Global CRTV" text="Fejr Kreativolis 1-årsdag med hygge, konkurrencer og goodiebags!" />
-      <Card img={latestbillede3} tag="Hidden Free Gem" text="Vilde Overvik Helmersen, studerende ved Mode og Designskolen: «At vise mine designs på Fashion Week var både nervepirrende og utrolig stort.»" />
+<section class="free-gems-section">
+  <div class="creative-news-grid">
+    <aside class="latest-updates">
+      <p class="overline">News</p>
+      <h3 class="side-heading">The Latest Updates</h3>
+
+      <div class="update">
+        <img src={latestbillede1.src} alt="Museum update" />
+        <p>Free entry to 200+ museums for everyone under 27!</p>
+        <span class="date">10/9‑2025</span>
+      </div>
+
+      <hr />
+
+      <div class="update">
+        <img src={latestbillede2.src} alt="Culture Night" />
+        <p>Copenhagen’s annual Culture Night kicks off the autumn break with hundreds of events in one evening</p>
+        <span class="date">4/9‑2025</span>
+      </div>
+
+      <hr />
+
+      <div class="update">
+        <img src={latestbillede3.src} alt="Glyptoteket concert" />
+        <p>Glyptoteket – Don't miss the free concert with Karoline Funder, techno-yoga, free beer and much more</p>
+        <span class="date">16/9‑2025</span>
+      </div>
+    </aside>
+
+    <div class="creative-escape-left">
+      <div class="escape-grid">
+        <img src={creativeEscape.src} alt="Creative Escape Banner" />
+      </div>
+
+      <!-- ⬇️ HER ER DEN VIGTIGE FLYTNING -->
+      <div class="headline-wrap">
+        <p class="overline">Unmissable Free Gems</p>
+        <h2 class="big-title">What can’t I miss in Copenhagen as a creative first-timer?</h2>
+      </div>
     </div>
-    <Card variant="featured" img={creativeEscape} tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
   </div>
 </section>
+
+<style>
+  .free-gems-section {
+    padding: 4rem 2rem;
+    background-color: #fdfbf7;
+    width: 100vw;
+    margin: 0;
+  }
+
+  .creative-news-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .creative-escape-left {
+    order: 2;
+  }
+
+  .headline-wrap {
+    margin-top: 4rem;
+    text-align: center;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .headline-wrap .overline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+  }
+
+  .headline-wrap .big-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 28ch;
+    margin: 0 auto;
+    color: #111;
+  }
+
+  .latest-updates {
+    order: 1;
+    border-top: 1px solid #999;
+    padding-top: 1rem;
+  }
+
+  /* NEW FIX – Make side-by-side layout work on desktop */
+  @media (min-width: 768px) {
+    .creative-news-grid {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .creative-escape-left {
+      flex: 3;
+      order: 1;
+    }
+
+    .latest-updates {
+      flex: 2;
+      order: 2;
+      padding-left: 2rem;
+    }
+
+    .headline-wrap .big-title {
+      font-size: 3rem;
+    }
+  }
+</style>

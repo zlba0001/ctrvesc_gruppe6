@@ -3,42 +3,59 @@ import Column from "./Column.astro";
 import Rød2Billede1 from "../img/rød2_articlebillede1.svg";
 import Rød2Billede2 from "../img/rød2_articlebillede2.svg";
 import Rød2Billede3 from "../img/rød2_articlebillede3.svg";
-
-const { variant, img, tag, text, link } = Astro.props;
 ---
 
-<section class="article-tekst">
-  <h2>Featured Articles</h2>
-  <h3>Unmissable Creative Hotspots</h3>
-  <div class="article-img">
-    <Column img={Rød2Billede1} content="Alis Wonderland - Skatepark and Creative Hub - More than just a skatepark - Wonderland is a vibrant playground bursting with colors, street art and the raw energy of Copenhagens creative scene " />
-    <Column img={Rød2Billede2} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
-    <Column img={Rød2Billede3} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
+<section class="article-section">
+  <div class="article-header">
+    <p class="overline">FEATURED ARTICLES</p>
+    <h2 class="headline">URBAN WORK HUBS IN COPENHAGEN</h2>
+  </div>
+
+  <div class="article-grid">
+    <Column img={Rød2Billede1} articleTag="Local CRTV" content="Matriklen – Coworking Space<br>A buzzing coworking hub where freelancers, entrepreneurs, and creators come together to share ideas and build projects." />
+    <Column img={Rød2Billede2} articleTag="Local CRTV" content="Soho – Coworking Space<br>Stylish and professional, Soho is perfect if you want a workspace that balances networking, focus, and a cool creative vibe." />
+    <Column img={Rød2Billede3} articleTag="Local CRTV" content="Tech & Story Lab – Digital Creative Workspace<br>Where storytelling meets technology – a space for digital creatives to experiment, collaborate, and bring bold ideas to life." />
   </div>
 </section>
 
 <style>
-  .article-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1.5rem;
+  .article-section {
+    background-color: #f5531d;
+    padding: 4rem 2rem;
+    color: #d9fa51;
+    text-align: center;
+    font-family: "Anton", sans-serif;
   }
 
-  .article-img {
+  .article-header .overline {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .article-header .headline {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: left;
+    border-bottom: 1px solid #d9fa51;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .article-grid {
+    display: grid;
+    gap: 2rem;
   }
 
   @media (min-width: 768px) {
     .article-grid {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
     }
 
-    .article-img {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    .article-header .headline {
+      font-size: 2.5rem;
     }
   }
 </style>

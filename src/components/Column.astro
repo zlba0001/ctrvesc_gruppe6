@@ -4,13 +4,10 @@ import Image from "astro/components/Image.astro";
 const { img, articleTag, content } = Astro.props;
 ---
 
-<article>
+<article class="column-card">
   <Image src={img} alt="" />
-  <p><span>{articleTag}</span> {content}</p>
+  <p class="column-text">
+    <span class="tag">{articleTag}</span><br />
+    <span set:html={content} />
+  </p>
 </article>
-
-<style>
-  span {
-    text-transform: uppercase;
-  }
-</style>

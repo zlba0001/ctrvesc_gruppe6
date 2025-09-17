@@ -7,87 +7,93 @@ import ThirdCol from "../img/forsidebillede3.svg";
 import Image from "astro/components/Image.astro";
 ---
 
-<section>
+<section class="hero-section">
   <div class="bg-img">
-    <div class="hero-tekst">
-      <h2>A welcoming guide to Copenhagens creative world.</h2>
-      <h3>For newcomers, dreamers, and experienced creators alike.</h3>
-    </div>
     <div class="hero-img">
-      <Image src={HeroBillede} alt="bla bal" />
+      <Image src={HeroBillede} alt="Hero billede" />
+    </div>
+    <div class="hero-text">
+      <h2>A WELCOMING GUIDE<br />TO COPENHAGEN’S<br />CREATIVE WORLD.</h2>
+      <h3>FOR NEWCOMERS, DREAMERS, AND<br />EXPERIENCED CREATORS ALIKE.</h3>
     </div>
   </div>
+
   <div class="grid-cols">
-    <Column img={FirstCol} articleTag="Local cv" content="This is one column." />
-    <Column img={SecondCol} content="here wa want other text" />
-    <Column img={ThirdCol} content="This is another." />
+    <Column img={FirstCol} articleTag="Local CRTV" content="Hos AOF.dk finder du inspirerende kreative kurser for nybegyndere i København." />
+    <Column img={SecondCol} articleTag="Local CRTV" content="Fejr Kreativolis 1-årsdag med hygge, konkurrencer og goodiebags!" />
+    <Column img={ThirdCol} articleTag="Local CRTV" content="Vilde Overvik Helmersen, studerende ved Mode og Designskolen: «At vise mine designs på Fashion Week var både nervepirrende og utrolig stort.»" />
   </div>
 </section>
 
 <style>
-  h2,
-  h3 {
-    text-align: center;
+  @font-face {
+    font-family: "Anton";
+    src: url("/fonts/Anton-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
   }
+
+  .hero-section {
+    font-family: "Anton", sans-serif;
+  }
+
   .bg-img {
     position: relative;
+    width: 100%;
   }
+
   .hero-img img {
     display: block;
     width: 100%;
     height: auto;
   }
 
-  .hero-tekst {
+  .hero-text {
     position: absolute;
-    inset: 50% auto auto 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #d9fa51;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    padding: 0.5rem 1rem;
-    max-width: 90ch;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    padding: 0 1rem;
   }
 
-  /* Mobil: 1 kolonne som default */
+  .hero-text h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.1;
+  }
+
+  .hero-text h3 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: bold;
+  }
+
+  @media (min-width: 768px) {
+    .hero-text h2 {
+      font-size: 3.5rem;
+    }
+
+    .hero-text h3 {
+      font-size: 1.5rem;
+    }
+  }
+
   .grid-cols {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin: 1.5rem;
+    margin: 2rem 1rem;
   }
 
   @media (min-width: 768px) {
-    .hero-img {
-      width: 100%;
-      height: auto;
-    }
-    .grid_3_1f {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .grid_1_1f_1_2fr {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 2rem;
-    }
-
-    .hero-tekst {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #d9fa51;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    }
-
     .grid-cols {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+      margin: 3rem;
     }
   }
 </style>

@@ -3,45 +3,59 @@ import Column from "./Column.astro";
 import Rød1Billede1 from "../img/rød1_articlebillede1.svg";
 import Rød1Billede2 from "../img/rød1_articlebillede2.svg";
 import Rød1Billede3 from "../img/rød1_articlebillede3.svg";
-import Rød2Billede1 from "../img/rød2_articlebillede1.svg";
-import Rød2Billede2 from "../img/rød2_articlebillede2.svg";
-import Rød2Billede3 from "../img/rød2_articlebillede3.svg";
-
-const { variant, img, tag, text, link } = Astro.props;
 ---
 
-<section class="article-tekst">
-  <h2>Featured Articles</h2>
-  <h3>Unmissable Creative Hotspots</h3>
-  <div class="article-img">
-    <Column img={Rød1Billede1} content="Alis Wonderland - Skatepark and Creative Hub - More than just a skatepark - Wonderland is a vibrant playground bursting with colors, street art and the raw energy of Copenhagens creative scene " />
-    <Column img={Rød1Billede2} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
-    <Column img={Rød1Billede3} content="Månefiskeren - Creative Hotspot A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagens underground creative vibes." />
+<section class="article-section">
+  <div class="article-header">
+    <p class="overline">FEATURED ARTICLES</p>
+    <h2 class="headline">UNMISSABLE CREATIVE HOTSPOTS IN COPENHAGEN</h2>
+  </div>
+
+  <div class="article-grid">
+    <Column img={Rød1Billede1} articleTag="Local CRTV" content="Alis Wonderland – Skatepark & Creative Hub<br>More than just a skatepark – Wonderland is a vibrant playground bursting with colors, street art, and the raw energy of Copenhagen’s creative scene." />
+    <Column img={Rød1Billede2} articleTag="Local CRTV" content="Månefiskeren – Creative Hotspot<br>A hidden gem where art, music, and community collide. Månefiskeren is the perfect spot to dive into Copenhagen’s underground creative vibes." />
+    <Column img={Rød1Billede3} articleTag="Local CRTV" content="Demokrati Garagen – Events & Exhibitions<br>Step into a buzzing cultural garage filled with debates, exhibitions, and community-driven events. A space where creativity meets social change." />
   </div>
 </section>
 
 <style>
-  .article-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1.5rem;
+  .article-section {
+    background-color: #ff5521;
+    padding: 4rem 2rem;
+    color: #d9fa51;
+    text-align: center;
+    font-family: "Anton", sans-serif;
   }
 
-  .article-img {
+  .article-header .overline {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .article-header .headline {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: left;
+    border-bottom: 1px solid #d9fa51;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .article-grid {
+    display: grid;
+    gap: 2rem;
   }
 
   @media (min-width: 768px) {
     .article-grid {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
     }
 
-    .article-img {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
+    .article-header .headline {
+      font-size: 2.5rem;
     }
   }
 </style>
