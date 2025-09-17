@@ -3,11 +3,9 @@ import PageLayout from "../layouts/PageLayout.astro";
 import Card from "../components/Card.astro";
 import Hero from "../components/Hero.astro";
 import Article from "../components/Article.astro";
-import Column from "../components/Column.astro";
-import FeaturedBillede from "../img/rød1_articlebillede1.svg";
-import FeaturedBillede2 from "../img/rød1_articlebillede2.svg";
-import FeaturedBillede3 from "../img/rød1_articlebillede3.svg";
-import creativeEscape from "../img/creativeescapebillede.svg";
+import Article2 from "../components/Article2.astro";
+import Article3 from "../components/Article3.astro";
+import GemSection from "../components/GemSection.astro";
 
 // import Hero from "../img/herobillede.svg";
 ---
@@ -16,27 +14,12 @@ import creativeEscape from "../img/creativeescapebillede.svg";
   <Hero />
 
   <Article />
-  <section>
-    <h2>Kort sektion</h2>
-    <div class="grid_1_1f_1_2fr">
-      <div class="flex_one_column">
-        <Card img="/img/graffiti01.webp" tag="Local CRTV" text="Hos AOF.dk finder du inspirerende kreative kurser for nybegyndere i København." link="/content/localcrtv" />
-        <Card img="/img/graffiti02.webp" tag="Global CRTV" text="Fejr Kreativolis 1-årsdag med hygge, konkurrencer og goodiebags!" />
-        <Card img="/img/graffiti03.webp" tag="Hidden Free Gem" text="Vilde Overvik Helmersen, studerende ved Mode og Designskolen: «At vise mine designs på Fashion Week var både nervepirrende og utrolig stort.»" />
-      </div>
-      <Card variant="featured" img={creativeEscape} tag="Global CRTV" text="Dolor sit amet consectetur Lorem ipsum" />
-    </div>
-  </section>
 
-  <header>
-    <h1>Oaser</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed nemo aut porro quisquam sint sequi nam, corrupti deserunt quos, est omnis consequuntur voluptate eum. Eligendi pariatur inventore eius consequatur rem.</p>
-  </header>
-  <section>
-    <h2>Ny overskrift</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui et debitis sit illum consequatur, corrupti minus officia atque tempore, eveniet fugiat id nesciunt iusto, labore commodi magnam itaque inventore praesentium.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore commodi mollitia modi reprehenderit dolor autem distinctio, placeat architecto veniam non, itaque pariatur aut nemo? Totam harum corrupti aspernatur. Inventore, aperiam.</p>
-  </section>
+  <Article2 />
+
+  <Article />
+
+  <GemSection />
 
   <section>
     <h2>Kort sektion</h2>

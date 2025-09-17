@@ -3,11 +3,11 @@
 import creativeescapebillede from "../img/creativeespacebillede.svg";
 
 
-const { variant, img, tag, text, link } = Astro.props;
+const { img, variant, tag, text, link } = Astro.props;
 ---
 
 <article class={variant}>
-  <img src={img} />
+  <img src={img.src} />
   <p class="tag"><a href={link}>{tag}</a></p>
   <p>{text}</p>
 </article>
