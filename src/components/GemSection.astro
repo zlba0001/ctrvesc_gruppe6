@@ -1,26 +1,82 @@
 ---
-
-import Image from "astro/components/Image.astro"
-import freegem1 from "../img/free_gems_billede1.svg"
-import freegem2 from "../img/free_gems_billede2.svg"
-
-
+// Imports
+import Image from "astro/components/Image.astro";
+import freegem1 from "../img/free_gems_billede1.svg";
+import freegem2 from "../img/free_gems_billede2.svg";
 ---
-
 
 <section class="free-gems-section">
   <div class="free-gems-grid">
     <article class="gem-card">
       <Image src={freegem1} alt="People sitting in a music & photography lab" />
       <p class="gem-label">UNMISSABLE FREE GEMS</p>
-      <h2 class="gem-title">TURING TABLES MUSIC & PHOTOGRAPHY LAB</h2>
+      <h2 class="gem-title">TURING TABLES – MUSIC & PHOTOGRAPHY LAB</h2>
     </article>
 
     <article class="gem-card">
       <Image src={freegem2} alt="People sketching sculptures at SMK" />
       <p class="gem-label">UNMISSABLE FREE GEMS</p>
-      <h2 class="gem-title">SMK FREE ENTRY ON FRIDAYS</h2>
+      <h2 class="gem-title">SMK – FREE ENTRY ON FRIDAYS</h2>
     </article>
   </div>
 </section>
 
+<style>
+  .free-gems-section {
+    background-color: #fdfbf7;
+    padding: 5rem 2rem;
+    width: 100%;
+  }
+
+  .free-gems-grid {
+    display: grid;
+    gap: 4rem;
+  }
+
+  .gem-card {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .gem-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .gem-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 0.04em;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .gem-title {
+    font-family: "Anton", sans-serif;
+    font-size: 2rem;
+    line-height: 1.1;
+    color: #111;
+    margin: 0 auto;
+    max-width: 18ch;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .free-gems-grid {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      align-items: flex-start;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gem-title {
+      font-size: 2.4rem;
+    }
+  }
+</style>
