@@ -1,6 +1,152 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import PageLayout from "../layouts/PageLayout.astro";
+import Footer from "../components/Footer.astro";
+
+import HeroImg from "../img/side2_herobillede.svg";
+import PassionImg from "../img/passion_billede.svg";
+import Lampe1 from "../img/lamper_billede1.svg";
+import Lampe2 from "../img/lamper_billede2.svg";
+import RaadImg from "../img/råd_billede1.svg";
 ---
 
-<PageLayout title="About" />
+<PageLayout title="About">
+  <section class="about-wrapper">
+    <!-- Intro sektion -->
+    <div class="intro">
+      <h1>FRA SKETCH TIL FASHION WEEK</h1>
+      <p>Mød Vilde Overvik Helmersen, den norske designer der fulgte sin drøm gennem mode og designskolen i København og endte på catwalken under Fashion Week.</p>
+    </div>
+
+    <!-- Hero billede -->
+    <img class="hero" src={HeroImg.src} alt="catwalk billede" />
+
+    <!-- Citat 1 -->
+    <blockquote>“Man kan virkelig starte helt fra scratch på designskole. Undervisningen bygger op trin for trin, og man får frihed til at finde sit eget udtryk.”</blockquote>
+
+    <!-- Sektion: Passion -->
+    <div class="section">
+      <h2>PASSION FOR HÅNDARBEJDE</h2>
+      <p>26-årige Vilde Overvik Helmersen fra Trondheim har altid haft en passion for håndarbejde. Opvokset med en mor, der syede kjoler til hende, lå vejen ind i modeverdenen lige for. Hun valgte at flytte til København for at starte på mode og designskolen, hvor hun kunne udvikle sine idéer og teknikker fra bunden.</p>
+    </div>
+
+    <!-- Billede: Vilde alene -->
+    <img class="img-medium" src={PassionImg.src} alt="Vilde Helmersen" />
+
+    <!-- Sektion: Lamper -->
+    <div class="section">
+      <h2>Lamper som inspiration</h2>
+      <p>På sit afsluttende projekt fik hun frie hænder. Hun valgte franske lamper som inspiration og skabte en couture-kollektion med både genbrugstekstiler og luksuriøse materialer. Resultatet blev vist frem på catwalken til Fashion Week.</p>
+    </div>
+
+    <!-- Billeder 2 i grid -->
+    <div class="img-two-col">
+      <img src={Lampe1.src} alt="Runway" />
+      <img src={Lampe2.src} alt="Model" />
+    </div>
+
+    <!-- Sektion: Drømmen fremover -->
+    <div class="section">
+      <h2>Drømmen fremover</h2>
+      <p>Jeg ønsker at kombinere arbejde for etablerede brands med at opbygge mit eget brand ved siden af. Om nogle år håber jeg at have mere erfaring i branchen, salgskanaler på plads og måske en lille kollektion tilgængelig for kunder.</p>
+    </div>
+
+    <!-- Sektion: Et råd -->
+    <div class="section">
+      <h2>Et råd til unge kreative</h2>
+      <p>Vilde er ikke i tvivl om, hvad hun vil sige til andre, der drømmer om mode og design.</p>
+    </div>
+
+    <!-- Citat 2 -->
+    <blockquote>“Hvis du drømmer om mode og design, så stol på dig selv. Find et miljø, hvor du bliver støttet, lær alt hvad du kan – og mist aldrig troen på dig selv.”</blockquote>
+
+    <!-- Billede: Råd billede -->
+    <img class="img-medium" src={RaadImg.src} alt="Vilde arbejder" />
+    <p class="image-caption">Se mer av Vilde på Instagram.</p>
+  </section>
+
+  <Footer />
+</PageLayout>
+
+<style>
+  .about-wrapper {
+    background-color: #f5f3f0;
+    color: #000;
+    padding: 2rem 1rem;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .intro p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+  }
+
+  .hero {
+    width: 100%;
+    margin: 2rem 0;
+    display: block;
+  }
+
+  blockquote {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #0047ff;
+    max-width: 700px;
+    margin: 2rem auto;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .section {
+    max-width: 700px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+  }
+
+  h2 {
+    font-family: "Arial Black", sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2b2b2b;
+  }
+
+  .img-medium {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+  }
+
+  .img-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 700px;
+    margin: 2rem auto;
+  }
+
+  .img-two-col img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-caption {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    .img-two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

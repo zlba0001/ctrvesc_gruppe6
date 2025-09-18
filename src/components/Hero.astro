@@ -10,7 +10,11 @@ import Image from "astro/components/Image.astro";
 <section class="hero-section">
   <div class="bg-img">
     <div class="hero-img">
-      <Image src={HeroBillede} alt="Hero billede" />
+      <!-- <Image src={HeroBillede} alt="Hero billede" /> -->
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="/public/headervideo_1.mp4" type="video/mp4" />
+        Din browser understøtter ikke video-tagget.
+      </video>
     </div>
     <div class="hero-text">
       <h2>A WELCOMING GUIDE<br />TO COPENHAGEN’S<br />CREATIVE WORLD.</h2>
@@ -46,6 +50,13 @@ import Image from "astro/components/Image.astro";
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
   }
 
   .hero-text {
@@ -84,6 +95,8 @@ import Image from "astro/components/Image.astro";
 
   .grid-cols {
     display: grid;
+    flex-direction: column;
+    justify-content: center;
     grid-template-columns: 1fr;
     gap: 1rem;
     margin: 2rem 1rem;
